@@ -39,8 +39,9 @@ target_link_libraries (graph LINK_PUBLIC
     ../../googletest/build/lib/Debug/gtestd
 )
 else()
+set(GTEST_LIB_PATH $ENV{GTEST_LIB_PATH}) 
 target_link_libraries (graph LINK_PUBLIC 
-    ../../googletest/build/lib/libgtest.a
+    $ENV{GTEST_LIB_PATH}/libgtest.a
     pthread
 )
 endif()
