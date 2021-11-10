@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 # target_compile_options()
 if (MSVC) 
     # warning level 4 and all warnings as errors
-    add_compile_options(/W4 /WX)
+    add_compile_options(/W4 /WX /MTd)
 else ()
     # gcc
     add_compile_options(-Wall -Wextra -pedantic -Werror)
@@ -34,10 +34,16 @@ add_executable(graph ${MAIN} ${SRC_FILES} ${TEST_FILES})
 # target_compile_definitions()
 # target_include_directories()
 # target_link_libraries()
+if (MSVC) 
 target_link_libraries (graph LINK_PUBLIC 
-    /home/dmh2000/projects/cpp-alg/googletest/build/lib/libgtest.a
+    ../../googletest/build/lib/Debug/gtestd
+)
+else()
+target_link_libraries (graph LINK_PUBLIC 
+    ../../googletest/build/lib/libgtest.a
     pthread
 )
+endif()
 
 
 target_include_directories(

@@ -85,6 +85,8 @@ namespace Graph
     {
 
     public:
+        virtual ~DFS() {}
+
         /**
         * HasPathTo : return true if there is a path from root to v
         */
