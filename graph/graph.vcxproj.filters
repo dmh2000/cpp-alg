@@ -33,11 +33,11 @@
     <ClCompile Include="src\dfs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graph_dfs_test.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
     <ClCompile Include="graph.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\graph_dfs_test.cpp">
+      <Filter>Tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

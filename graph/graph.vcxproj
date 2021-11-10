@@ -147,7 +147,7 @@
     <ClCompile Include="src\adjlistgraph.cpp" />
     <ClCompile Include="src\graphData.cpp" />
     <ClCompile Include="src\dfs.cpp" />
-    <ClCompile Include="src\graph_dfs_test.cpp" />
+    <ClCompile Include="test\graph_dfs_test.cpp" />
     <ClCompile Include="test\graph_input_test.cpp" />
   </ItemGroup>
   <ItemGroup>
