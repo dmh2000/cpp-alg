@@ -23,18 +23,26 @@ endif()
 # add_subdirectory(src)
 # add_subdirectory(test)
 
-# add an executable
+# get source source files
+file(GLOB MAIN graph.cpp)
 file(GLOB SRC_FILES src/*.cpp)
 file(GLOB TEST_FILES test/*.cpp)
-add_executable(graph ${SRC_FILES} ${TEST_FILES})
+
+# add an executable
+add_executable(graph ${MAIN} ${SRC_FILES} ${TEST_FILES})
 
 # target_compile_definitions()
 # target_include_directories()
 # target_link_libraries()
-# target_link_libraries (graph LINK_PUBLIC src)
-# target_link_libraries (graph LINK_PUBLIC test)
+target_link_libraries (graph LINK_PUBLIC 
+    /home/dmh2000/projects/cpp-alg/googletest/build/lib/libgtest.a
+    pthread
+)
+
 
 target_include_directories(
-    graph PUBLIC include
+    graph PUBLIC 
+    include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../googletest/googletest/include
     "${PROJECT_BINARY_DIR}"
 )

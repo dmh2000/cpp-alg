@@ -12,7 +12,7 @@ namespace Graph
     C++ code in this file is based on the Java implementation from
     Sedgewick, Robert. Algorithms . Pearson Education. Kindle Edition. Chapter 4
     */
-    
+
     // forward references
     class Graph;
 
@@ -20,7 +20,7 @@ namespace Graph
     // Edge : data for one edge
     struct Edge
     {
-        Edge() :v(0),w(0) {}
+        Edge() : v(0), w(0) {}
         Edge(int v, int w) : v(v), w(w) {}
 
         int v;
@@ -34,10 +34,9 @@ namespace Graph
         int e;
         std::vector<Edge> edges;
     };
-    
 
-    int scanInt(std::ifstream& f);
-    Edge scanEdge(std::ifstream& f);
+    int scanInt(std::ifstream &f);
+    Edge scanEdge(std::ifstream &f);
     std::unique_ptr<const GraphData> getGraphData(std::string fname);
 
     // Graph :  interface to undirected graph
@@ -70,7 +69,7 @@ namespace Graph
         /**
         * Adj : get a list of vertices adjacent to v
         */
-        virtual const std::vector<int>& adj(int v) const = 0;
+        virtual const std::vector<int> &adj(int v) const = 0;
 
         /**
         *  ToString : return string representation
@@ -82,25 +81,26 @@ namespace Graph
     std::unique_ptr<Graph> NewAdjacencyListGraph(int v);
     std::unique_ptr<Graph> NewAdjacencyListGraph(const GraphData *gd);
 
-    class  DFS {
+    class DFS
+    {
 
-    public: 
+    public:
         /**
         * HasPathTo : return true if there is a path from root to v
         */
-        virtual bool hasPathTo(int v)  const = 0;
+        virtual bool hasPathTo(int v) const = 0;
 
         /** 
         * pathTo : returns list of nodes in path from root to v
         */
-        virtual std::deque<int> pathTo(int v)  = 0;
+        virtual std::deque<int> pathTo(int v) = 0;
     };
 
     /** DFS factory
     * when called the DFS performs a search from the node 'source' on 
     * the selected Graph. 
     */
-    std::unique_ptr<DFS> NewDFS(const Graph* g, int source);
-};
+    std::unique_ptr<DFS> NewDFS(const Graph *g, int source);
+}
 
 #endif

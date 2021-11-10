@@ -4,17 +4,13 @@
 #include "gtest/gtest.h"
 #include "graph.h"
 
-void checkPath(std::deque<int> path) {
-
-}
-
 const int tinyPathLen[13] = {
-	0,2,2,4,3,2,4,0,0,0,0,0,0
-};
+	0, 2, 2, 4, 3, 2, 4, 0, 0, 0, 0, 0, 0};
 
-TEST(GraphDFSTest, GraphDfsFSHasPathTo) {
+TEST(GraphDFSTest, GraphDfsFSHasPathTo)
+{
 	// read the graph data
-	std::unique_ptr<const Graph::GraphData> gd = Graph::getGraphData("data/tinyG.txt");
+	std::unique_ptr<const Graph::GraphData> gd = Graph::getGraphData("../data/tinyG.txt");
 
 	// create the graph
 	const std::unique_ptr<Graph::Graph> graph = NewAdjacencyListGraph(gd.get());
@@ -24,18 +20,22 @@ TEST(GraphDFSTest, GraphDfsFSHasPathTo) {
 	const auto dfs = Graph::NewDFS(graph.get(), source);
 
 	// test if there is a path from 0 to the other nodes in the graph
-	for (auto i = 1; i < graph->v(); i++) {
+	for (auto i = 1; i < graph->v(); i++)
+	{
 		auto b = dfs->hasPathTo(i);
-		if (b) {
+		if (b)
+		{
 			auto p = dfs->pathTo(i);
-			for (auto w : p) {
-				EXPECT_EQ(p.size(), tinyPathLen[i]);
+			EXPECT_EQ(p.size(), static_cast<size_t>(tinyPathLen[i]));
+			for (auto w : p)
+			{
+				std::cerr << w << ",";
 			}
 			std::cerr << "\n";
-		} 
-		else {
+		}
+		else
+		{
 			std::cerr << "no path from " << source << " to " << i << "\n";
 		}
 	}
-
 }
