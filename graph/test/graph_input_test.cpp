@@ -97,7 +97,10 @@ TEST(GraphInputTest, GraphCreation) {
 	std::ifstream f;
 
 	// read the graph data
-	const std::unique_ptr<Graph::GraphData> gd = Graph::getGraphData("data/tinyG.txt");
+	std::unique_ptr<const Graph::GraphData> gd = Graph::getGraphData("data/tinyG.txt");
+	// gd->v = 1;
+	auto gd1 = Graph::getGraphData("data/tinyG.txt");
+	// gd1->v = 1;
 
 	std::unique_ptr<Graph::Graph> graph = NewAdjacencyListGraph(gd.get());
 

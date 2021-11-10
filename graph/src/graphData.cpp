@@ -21,7 +21,7 @@ namespace Graph {
 	}
 
 	// GetTestData get test data for union connectivity algorithms
-	std::unique_ptr<GraphData> getGraphData(std::string fname) {
+	std::unique_ptr<const GraphData> getGraphData(std::string fname) {
 		GraphData gd;
 		
 		std::ifstream f;

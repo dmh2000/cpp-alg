@@ -14,15 +14,14 @@ const int tinyPathLen[13] = {
 
 TEST(GraphDFSTest, GraphDfsFSHasPathTo) {
 	// read the graph data
-	auto gd = Graph::getGraphData("data/tinyG.txt");
+	std::unique_ptr<const Graph::GraphData> gd = Graph::getGraphData("data/tinyG.txt");
 
 	// create the graph
-	std::unique_ptr<Graph::Graph> graph = NewAdjacencyListGraph(gd.get());
-
+	const std::unique_ptr<Graph::Graph> graph = NewAdjacencyListGraph(gd.get());
 	int source = 0;
 
 	// create a processed DFS starting at source = 0
-	auto dfs = Graph::NewDFS(graph.get(), source);
+	const auto dfs = Graph::NewDFS(graph.get(), source);
 
 	// test if there is a path from 0 to the other nodes in the graph
 	for (auto i = 1; i < graph->v(); i++) {

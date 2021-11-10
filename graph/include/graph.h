@@ -38,7 +38,7 @@ namespace Graph
 
     int scanInt(std::ifstream& f);
     Edge scanEdge(std::ifstream& f);
-    std::unique_ptr<GraphData> getGraphData(std::string fname);
+    std::unique_ptr<const GraphData> getGraphData(std::string fname);
 
     // Graph :  interface to undirected graph
     // this implemntation assumes the number of vertices are known at init time.
