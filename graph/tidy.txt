@@ -1,0 +1,14 @@
+clang-tidy graph.cpp src/Adjlistgraph.cpp src/dfs.cpp src/graphData.cpp test/graph_dfs_test.cpp test/graph_input_test.cpp  -- -std=c++14 -I./include -I../googletest/googletest/include
+1 error generated.
+Error while processing /home/dmh2000/projects/cpp-alg/graph/src/Adjlistgraph.cpp.
+1 error generated.
+Error while processing /home/dmh2000/projects/cpp-alg/graph/src/dfs.cpp.
+1 error generated.
+Error while processing /home/dmh2000/projects/cpp-alg/graph/src/graphData.cpp.
+1 error generated.
+Error while processing /home/dmh2000/projects/cpp-alg/graph/test/graph_dfs_test.cpp.
+1 error generated.
+Error while processing /home/dmh2000/projects/cpp-alg/graph/test/graph_input_test.cpp.
+error: error reading '/home/dmh2000/projects/cpp-alg/graph/src/Adjlistgraph.cpp' [clang-diagnostic-error]
+Found compiler error(s).
+make: *** [Makefile:9: tidy] Error 1
