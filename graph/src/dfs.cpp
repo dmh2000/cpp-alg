@@ -45,6 +45,8 @@ namespace Graph {
 			search(g, source);
 		}
 
+		// no destructor, doesn't need rule of 5 additions
+
 		/**
 		* HasPathTo : return true if there is a path from source to v
 		*/
