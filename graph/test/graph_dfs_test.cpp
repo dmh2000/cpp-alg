@@ -1,8 +1,8 @@
+#include "graph.h"
+#include "gtest/gtest.h"
 #include <algorithm>
 #include <deque>
 #include <iostream>
-#include "gtest/gtest.h"
-#include "graph.h"
 
 const int tinyPathLen[13] = {
 	0, 2, 2, 4, 3, 2, 4, 0, 0, 0, 0, 0, 0};

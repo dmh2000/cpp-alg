@@ -32,7 +32,7 @@ namespace Graph
             m_adj = std::vector<std::vector<int>>(gd->e);
             for (auto e : gd->edges)
             {
-                addEdge(e.v, e.w);
+                addEdgeNV(e.v, e.w);
             }
         }
 
@@ -49,6 +49,13 @@ namespace Graph
 
         // addEdge: add an edge to the specified vertex
         virtual void addEdge(int v, int w)
+        {
+            m_adj[v].push_back(w);
+            m_adj[w].push_back(v);
+        }
+
+        // addEdgeNV: nonvirtual for constructor
+        void addEdgeNV(int v, int w)
         {
             m_adj[v].push_back(w);
             m_adj[w].push_back(v);

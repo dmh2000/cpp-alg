@@ -1,8 +1,8 @@
+#include "graph.h"
+#include "gtest/gtest.h"
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include "gtest/gtest.h"
-#include "graph.h"
 
 TEST(GraphInputTest, GraphInputFunctions)
 {
